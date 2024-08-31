@@ -35,8 +35,8 @@ function Hero() {
             </a>
         </span>
         <p>With a passion of learning and building react application</p>
-        <a href={CV} download>
-        <button className="hover">
+        <a href={CV} >
+        <button className="hover" download>
             Resume
         </button>
         </a>
