@@ -13,21 +13,36 @@ function Contact() {
                 name="name" 
                 id="name"
                 placeholder="Name" 
-                reguired 
+                required 
                 />
             </div>
-            <div className="formGroup">
-                <label htmlFor="email" hidden>
+        <div className="formGroup">
+            <label htmlFor="Email" hidden>
                     Email
                 </label>
-                <input type="text" 
+                <input type="email" 
                 name="email" 
                 id="email"
-                placeholder="Email" 
-                reguired 
+                placeholder="email" 
+                required 
                 />
             </div>
 
+            <div className="formGroup">
+                <label htmlFor="message" hidden>
+                    Message
+                </label>
+                <textarea
+                name="message" 
+                id="message"
+                placeholder="Message" 
+                required >
+                </textarea>
+            </div>
+            <input className="Hover btn" 
+            type="submit" 
+            value="Submit"
+            />
         </forms>
     </section>
   );
