@@ -1,11 +1,17 @@
-import styles from './ContactStyles.module.css'
+import styles from './ContactStyles.module.css';
+import { useForm} from '@formspree/react';
 
 function Contact() {
+    const [state, handleSubmit] = useForm("mblrbpez");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+  }
+
   return (
     <section id="contact" className={styles.container}>
         <h1 className="SectionTitle">Contact</h1>
-        <forms action="https://formspree.io/f/mblrbpez" method="POST">
-        <div className="formGroup">
+        <form onSubmit = {handleSubmit}>
+        <div className={styles.formGroup}> 
             <label htmlFor="name" hidden>
                     Name
                 </label>
@@ -16,7 +22,7 @@ function Contact() {
                 required 
                 />
             </div>
-        <div className="formGroup">
+        <div className={styles.formGroup}>
             <label htmlFor="Email" hidden>
                     Email
                 </label>
@@ -28,7 +34,7 @@ function Contact() {
                 />
             </div>
 
-            <div className="formGroup">
+            <div className={styles.formGroup}>
                 <label htmlFor="message" hidden>
                     Message
                 </label>
@@ -43,7 +49,7 @@ function Contact() {
             type="submit" 
             value="Submit"
             />
-        </forms>
+        </form>
     </section>
   );
 }
